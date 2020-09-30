@@ -1,4 +1,6 @@
 <div class="con-wrapper">
+
+    {{#unless profile}}
     <nav class="tp">
         <h4>{{result.range}}</h4>
         <h4>{{result.total}}</h4>
@@ -7,20 +9,26 @@
         </form>
         <a href="#open-modal" id="btn-new-agregate" >Agregar</a>
     </nav>
+    {{/unless}}
     <div class="container">
+        {{#if profile}}
+        <div class="con-formUser">
+            {{> formUser}}
+        </div>
+        {{/if}}
         {{#each result.cards}}
         <div>{{> SCard}}</div>
         {{/each}}
         <script src="/javascripts/sistema/SCards.js"></script>
     </div>
     
+    {{#unless profile}}
     <nav class="bt">
-
         {{#each result.pages}}
         <a href="&page={{this}}">{{this}}</a>
         {{/each}}
-
     </nav>
+    {{/unless}}
 </div>
 
 <script src="/javascripts/sistema/Container.js"></script>

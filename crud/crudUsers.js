@@ -85,9 +85,7 @@ const updatePass=async(user)=>{
 }
 
 const updateUser=async(user)=>{
-    let confirmationPass=user.pass==user.repeat;
 
-    if(confirmationPass){
         let idUser=await Users.findOne({
             name:user.oldname
         });
@@ -104,11 +102,6 @@ const updateUser=async(user)=>{
                 }
         )
         return updateUser;
-    }else{
-
-        return "las contraseñas no son iguales name";
-    }
-
 
 }
 

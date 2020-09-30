@@ -1,13 +1,12 @@
 <head>
     <link rel="stylesheet" href="/stylesheets/sistema/modal-form.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
 </head>
 {{> Loader}}
 <div class="frm-wrapper">
     <span class="message-reserr">Lorem, ipsum dolor.</span>
     <h1>perfil</h1>
     <form id="user" act="update">
-        <input type="text" oldname="" name="name" placeholder="ingrese usuario" required>
+        <input type="text" oldname="{{user.name}}" name="name" placeholder="ingrese usuario" value="{{user.name}}" required>
         <span class="password">
             <input type="password" name="pass" placeholder="ingrese contraseña" required>
             <a href="#ver"><i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -16,8 +15,8 @@
             <input type="password" name="repeat" placeholder="repita contraseña" required>
             <a href="#ver"><i class="fa fa-eye" aria-hidden="true"></i></a>
         </span>
-        <input type="text" name="fullname" placeholder="ingrese nombre completo" required>
-        <input type="email" name="email" placeholder="ingrese correo" required>
+        <input type="text" name="fullname" placeholder="ingrese nombre completo" value="{{user.fullname}}" required>
+        <input type="email" name="email" placeholder="ingrese correo" value="{{user.email}}" required>
         <input type="submit" value="guardar">
     </form>
 </div>

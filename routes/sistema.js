@@ -8,6 +8,10 @@ let {searchUserFornName}=require('../crud/crudUsers');
 
 router.get("/",(req,res)=>{
 
+    if (req.query.close){
+        usnam.setuser(undefined);
+    }
+
     if(usnam.getuser()==undefined || usnam.getuser()==""){
         res.redirect('/login')
     }else{
@@ -45,6 +49,7 @@ const selectTitle=async(object)=>{
         case "artistas":
             let ar=await allArtist(object);
             return {
+                    profile:"",
                     user:{
                         name:usN.name,
                         fullname:usN.fullName,
@@ -62,6 +67,7 @@ const selectTitle=async(object)=>{
         case "albumes":
             let al=await allAlbums(object);
             return {
+                    profile:"",
                     user:{
                         name:usN.name,
                         fullname:usN.fullName,
@@ -80,6 +86,7 @@ const selectTitle=async(object)=>{
         case "noticias":
             let ne=await allNews(object);
             return {
+                    profile:"",
                     user:{
                         name:usN.name,
                         fullname:usN.fullName,
@@ -94,6 +101,21 @@ const selectTitle=async(object)=>{
                         pages:ne.pages
                     },
                 };
+        
+        case "perfil":
+
+            return {
+                profile:true,
+                user:{
+                    name:usN.name,
+                    fullname:usN.fullName,
+                    email:usN.email
+                },
+                form:"profile",
+                title:"Perfil"
+            };
+
+
         default:
         return {state:false,message:"no se encontro vista"};
     }

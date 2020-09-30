@@ -1,7 +1,10 @@
-let {searchUserFornName}=require('./crudUsers');
-
-searchUserFornName({name:"celestial"}).then(res=>{
-    console.log(JSON.stringify(res.email));
-}).catch(err=>{
-
-})
+let take={
+    nombre:"holis",
+    apelddios:"algo",
+    close:"hello"
+};
+if (take.close){
+    console.log("cerrar session");
+}else{
+    console.log("esta activo");
+}

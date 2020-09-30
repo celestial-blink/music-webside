@@ -5,6 +5,7 @@ let {insertAlbum, updateAlbum}=require('../../crud/crudAlbums');
 let {insertNews,updateNews}=require('../../crud/crudNews');
 let {allGenres,allCountries}=require('../../crud/getGCR');
 let {updateUser}=require('../../crud/crudUsers');
+let usenan=require('../../Globals/variables');
 
 let storage=multer.diskStorage({
     destination:'uploads/images/',
@@ -91,8 +92,11 @@ const updateDocument=async(object)=>{
             return {state:true,message:"se modificó noticia"}
 
         case "user":
+            let veri=object.pass==object.repeat;
+
             let upUsr=await updateUser(object);
-            return {state:true,message:"se modificó usuario"}
+            if(veri){usenan.setuser(object.name)}
+            return (veri)?{state:true,message:"se modificó usuario"}:{state:false,message:"contraseñas no coinciden"};
 
         default:
         return {state:false,message:"no se encontró formulario"}

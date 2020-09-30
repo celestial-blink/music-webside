@@ -102,3 +102,10 @@ div.con-wrapper>nav.bt>a{
     margin:0px 2px;
     border-radius: 10px;
 }
+div.con-formUser{
+    display: block;
+    position: relative;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgb(201 201 201 / 60%);
+}

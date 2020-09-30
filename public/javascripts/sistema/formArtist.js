@@ -66,6 +66,9 @@ const initialize=()=>{
             closeLoader();
             if(res.state){
                 messageRes({type:"res",message:res.message});
+                setTimeout(()=>{
+                    window.location.href=window.location.href.split("#")[0];
+                },1200);
             }else{
                 console.log(res.message);
                 messageRes({type:"err",message:res.message});
