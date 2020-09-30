@@ -1,8 +1,19 @@
 const closeSession=()=>{
-    let parameter=new URLSearchParams();
-    parameter.append('close','cerrar');
-    fetch('',{method:'GET',body:parameter}).catch(err=>{
-        console.log('se produjo un error');
-    })
+    fetch('?close=close',{method:'GET'}).then(res=>{
+        location.reload();
+    }).catch(err=>{
+        console.log(err);
+
+    });
 }
-closeSession();
+const initializeCloseSession=()=>{
+    let btn=document.querySelector(".hs-wrapper>.user>a");
+    console.log(btn);
+
+    btn.onclick=(e)=>{
+        e.preventDefault();
+        console.log("hola")
+        closeSession();
+    }
+}
+initializeCloseSession();

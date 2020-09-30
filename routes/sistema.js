@@ -9,7 +9,8 @@ let {searchUserFornName}=require('../crud/crudUsers');
 router.get("/",(req,res)=>{
 
     if (req.query.close){
-        usnam.setuser(undefined);
+        console.log(req.query.close);
+        usnam.setuser("");
     }
 
     if(usnam.getuser()==undefined || usnam.getuser()==""){
