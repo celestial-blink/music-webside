@@ -1,0 +1,50 @@
+.ar-wrapper{
+    position: relative;
+    background-color: var(--color-background-dark);
+    min-width: 360px;
+}
+.ar-wrapper>img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: 0 20%;
+    opacity: .4;
+}
+.ar-wrapper>.ar-container{
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.ar-wrapper>.ar-container>.container{
+    color: white;
+    background-color: #ffffff21;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.ar-wrapper>.ar-container>.container>.group-artist{
+    min-width: 200px;
+    margin: 10px 10px;
+}
+.ar-wrapper>.ar-container>.container>.group-artist>ul{
+    list-style-type:none;
+
+}
+.ar-wrapper>.ar-container>.container>.group-artist>h2{
+    text-align: center;
+}
+@media (max-width:560px){
+    .ar-wrapper>img{
+        object-position: 30% 0;
+    }
+    .ar-wrapper>.ar-container{
+        padding: 10px;
+    }
+}

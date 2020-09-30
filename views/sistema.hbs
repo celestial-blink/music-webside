@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/sistema/sistema.css"/>
+    <link rel="stylesheet" href="/stylesheets/sistema/Header.css">
+    <link rel="stylesheet" href="/stylesheets/sistema/Menu.css">
+    <link rel="stylesheet" href="/stylesheets/sistema/Container.css">
+    <link rel="stylesheet" href="/stylesheets/sistema/Smodal.css">
+    <link rel="stylesheet" href="/stylesheets/sistema/SCard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+</head>
+
+{{!-- {{> Loader}} --}}
+        <img class="bg-image" src="/images/fondotwo.jpg" alt="image">
+<div class="header-container">
+    {{> Header}}
+</div>
+<div class="prnc-container">
+    <div class="menu-container">
+        {{> Menu}}
+    </div>
+    <div class="conta-container" id="content-load">
+        <h1>{{title}}</h1>
+        {{> Container}}
+    </div>
+</div>
+
+{{> Smodal}}
+
+<script src="/javascripts/sistema/sistema.js"></script>

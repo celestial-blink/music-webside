@@ -1,0 +1,34 @@
+div.dw-wrapper{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-background-dark);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    transform: translateY(-50%);
+    top:50%;
+}
+div.dw-wrapper>h1{
+    text-align: center;
+    color:white;
+}
+div.dw-wrapper>ul{
+    color:white;
+    margin: 20px;
+    position: relative;
+}
+div.dw-wrapper>ul>li{
+    margin:10px 0px;
+}
+div.dw-wrapper>ul>li>a{
+    color:white;
+    text-decoration: none;
+}
+div.dw-wrapper>ul>li>a:hover{
+    color:var(--color-text-hover);
+    font-size: 17px;
+}

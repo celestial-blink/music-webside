@@ -1,0 +1,86 @@
+div.co-wrapper{
+position: relative;
+display: flex;
+justify-content: center;
+padding: 20px 0;
+}
+div.co-wrapper>img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: .7;
+}
+div.co-wrapper>.co-form{
+    height:400px;
+    width: 300px;
+    background-color: var(--color-background-transparent);
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+div.co-wrapper>.co-form>h2{
+    text-align: center;
+    color:white;
+    font-family: inherit;
+}
+div.co-wrapper>.co-form>input[type="mail"]{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    border:2px solid #ececec;
+    appearance: none;
+    color: var(--color-text);
+    font-size: 20px;
+    text-align: center;
+    font-family: inherit;
+    margin-top: 15px;
+    background-color: #ececec;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+div.co-wrapper>.co-form>input[type="mail"]::placeholder{
+    text-align: center;
+    font-size: 20px;
+}
+div.co-wrapper>.co-form>textarea{
+    min-width: 100%;
+    min-height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    appearance: none;
+    background-color: #ececec;
+    color: var(--color-text);
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-sizing: border-box;
+    padding:10px;
+}
+div.co-wrapper>.co-form>input[type="submit"]{
+    appearance: none;
+    outline: none;
+    margin-top: 15px;
+    height: 35px;
+    width: 100px;
+    color: #ececec;
+    border: 3px solid #ececec;
+    border-radius: 10px;
+    background-color: transparent;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+div.co-wrapper>.co-form>input[type="submit"]:hover{
+    background-color: #ececec;
+    color: var(--color-text);
+}

@@ -1,0 +1,26 @@
+<div class="con-wrapper">
+    <nav class="tp">
+        <h4>{{result.range}}</h4>
+        <h4>{{result.total}}</h4>
+        <form method="get">
+            <input type="search" name="searchdata" placeholder="buscar...">
+        </form>
+        <a href="#open-modal" id="btn-new-agregate" >Agregar</a>
+    </nav>
+    <div class="container">
+        {{#each result.cards}}
+        <div>{{> SCard}}</div>
+        {{/each}}
+        <script src="/javascripts/sistema/SCards.js"></script>
+    </div>
+    
+    <nav class="bt">
+
+        {{#each result.pages}}
+        <a href="&page={{this}}">{{this}}</a>
+        {{/each}}
+
+    </nav>
+</div>
+
+<script src="/javascripts/sistema/Container.js"></script>

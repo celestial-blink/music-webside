@@ -1,0 +1,12 @@
+<div id="cosillas"></div>
+<script>
+    const traer=async()=>{
+        let a =await fetch('/pruebas',{method:'post'});
+        let texto=await a.text()
+        document.getElementById('cosillas').innerHTML=texto
+        return texto
+    }
+    traer().then((res)=>{
+        console.log(res)
+    })
+</script>

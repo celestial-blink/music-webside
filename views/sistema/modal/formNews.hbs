@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/sistema/modal-form.css">
+</head>
+{{> Loader}}
+<div class="frm-wrapper">
+    <span class="message-reserr">Lorem, ipsum dolor.</span>
+    <h1>noticias</h1>
+    <form act="insert" id="new-news">
+        <input type="text" oldtitle="" name="title" placeholder="ingrese titulo obligatorio" required>
+
+        <textarea cols="30" rows="10" name="description" placeholder="escriba una descripcion obligatorio" required></textarea>
+
+        <label for="img-news">imagen</label>
+        <input type="file" name="cover" accept="image/jpeg, image/png, image/jpg" required>
+
+        <input type="url" name="link" id="img-news" placeholder="escriba url de la informacion obligatorio" required>
+
+        <label for="artist">Artist</label>
+        <select name="artist" id="artist">
+            <option value="">ninguno</option>
+        </select>
+
+        <input type="submit" value="publicar">
+        <input type="reset" value="nuevo">
+
+    </form>
+</div>
+<script src="/javascripts/sistema/formNews.js"></script>

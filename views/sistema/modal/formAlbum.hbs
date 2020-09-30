@@ -1,0 +1,105 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/sistema/modal-form.css">
+    <link rel="stylesheet" href="/stylesheets/sistema/min-modal.css">
+</head>
+{{> Loader}}
+<div class="frm-wrapper">
+    <span class="message-reserr">Lorem, ipsum dolor.</span>
+    <h1>Albunes</h1>
+    <form id="new-album" act="insert">
+        <span>
+            <label for="artist">artista</label>
+            <select name="artist" id="artista">
+            </select>
+            <a href="#min-modal" id="btn-new-artist-a">nuevo artista</a>
+        </span>
+
+        <input type="text" oldtitle="" name="title" placeholder="nombre del album" required>
+
+        <span>
+            <input type="text" id="newMusic" placeholder="nombre de la canción">
+            <a href="#añadir-musica" class="btn-add">añadir</a>
+            <a href="#min-modal" id="show-list-music">ver todos</a>
+            <h6 id="message-musics"></h6>
+        </span>
+
+        <label for="genres">generos</label>
+        <select name="genre" id="genreone">
+        </select>
+
+        <label for="cover">imagen</label>
+        <input type="file" name="cover" id="cover" accept="image/jpg, image/jpeg, image/png">
+        
+        <span>
+            <input type="text" id="newLink">
+            <a href="#añadir-link" class="btn-add">añadir</a>
+            <a href="#min-modal" id="show-list-url">ver todos</a>
+            <h6 id="message-links"></h6>
+        </span>
+
+        <input type="submit" value="agregar">
+        <input type="reset" value="nuevo">
+
+    </form>
+</div>
+
+
+
+<div class="minmodal-wrapper" id="min-modal">
+    <div class="container">
+        <a href="#open-modal">X</a>
+        <div class="frm-wrapper form-min-artist" id="form-min-artist">
+            <form  id="new-artist" act="insert">
+                <h4>hola</h4>
+                <input type="text" name="title" placeholder="ingrese nombre del artista o banda" required>
+
+                <label for="genre">seleccione genero</label>
+                <select name="genre" id="genretwo">
+                </select>
+
+                <label for="country">seleccione  pais</label>
+                <select name="country" id="country">
+                </select>
+
+                <input type="submit" value="guardar">
+            </form>
+        </div>
+
+        <span class="controls-edit" id="controls-edit">
+            <input type="text" name="" id="minModal-edit" placeholder="selecccione para editar">
+            <a href="#oki" id="minModal-ok">ok</a>
+        </span>
+        
+        <span class="show-list-musics" id="show-list-musics">
+                <ol id="view-list-music">
+                {{!-- <li><p>one</p>
+                    <a href="#delete">Eliminar</a>
+                </li>
+                <li><p>two</p>
+                    <a href="#delete">eliminar</a>
+                </li>
+                <li><p>three</p>
+                    <a href="#delete">eliminar</a>
+                </li> --}}
+            </ol>
+        </span>
+        
+        <span class="show-list-urls" id="show-list-urls">
+            <ol id="view-list-urls">
+                {{!-- <li><p>four</p>
+                    <a href="#delete">Eliminar</a>
+                </li>
+                <li><p>five</p>
+                    <a href="#delete">eliminar</a>
+                </li>
+                <li><p>six</p>
+                    <a href="#delete">eliminar</a>
+                </li> --}}
+            </ol>
+        </span>
+
+    </div>
+</div>
+
+<script src="/javascripts/sistema/min-modal.js"></script>
+<script src="/javascripts/sistema/formAlbum.js"></script>

@@ -1,0 +1,34 @@
+div.con-wrapper{
+    position: relative;
+    box-sizing: border-box;
+    padding: 20px;
+}
+div.con-wrapper>img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    object-fit: cover;
+}
+div.con-wrapper>.container{
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    padding: 0 40px;
+}
+
+@media (max-width:500px){
+    div.con-wrapper>.container{
+        font-size: 20;
+        padding: 0 10px;
+        text-align: center;
+    }
+}

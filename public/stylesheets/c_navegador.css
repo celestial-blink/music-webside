@@ -1,0 +1,197 @@
+nav.navegador{
+    background-color: black;
+    width: 100%;
+    height: 75px;
+    padding: 15px 35px;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-width: 360px;
+}
+nav.navegador>a{
+    text-decoration: none;
+    
+}
+nav.navegador>a>h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:white;
+    display: inline-block;
+    font-size: 34px;
+}
+nav.navegador>.mi_menu{
+    display: inline-block;
+    position: absolute;
+    width: 70%;
+    height: 50px;
+    box-sizing: border-box;
+}
+
+nav.navegador>.mi_menu>div{
+    display: inline-block;
+    position: absolute;
+    width: 600px;
+    right: 0;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px 0px;
+}
+nav.navegador>.mi_menu>div>a{
+    color:white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    text-decoration: none;
+    margin:0px 10px;
+    display: inline-block;
+    transition: all .3s;
+}
+nav.navegador>.mi_menu>div>a:hover{
+    transform: scale(1.1);
+    color:var(--color-text-hover);
+    box-sizing: border-box;
+}
+
+nav.navegador>.mi_menu>p{
+    color:white;
+    position:absolute;
+    bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    display: none;
+}
+nav.navegador>.mi_menu>h1{
+    display: none;
+    color:white
+}
+
+
+@media (max-width:800px){
+    nav.navegador{
+        padding: 0;
+    }
+    nav.navegador>h1{
+        margin:15px 20px;
+    }
+    nav.navegador>.mi_menu{
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top:0;
+        left: 0;
+        display:inline-block;
+        background-color: black;
+        transform: translate(100%,-100%);
+        overflow: hidden;
+        z-index: 1000;
+    }
+    nav.navegador>.mi_menu>div{
+        position: absolute;
+        margin: auto;
+        right: 0;
+        left:0;
+        top:-200px;
+        bottom: 0;
+        padding: 0;
+        width: 100%;
+        display: inline-block;
+    }
+    nav.navegador>.mi_menu>div>a{
+        display: block;
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: #ffffff28;
+        box-sizing: border-box;
+        padding: 10px 0px;
+    }
+    nav.navegador>.mi_menu>h1{
+        display:block;
+        color:white;
+        font-size: 48px;
+        position: absolute;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        margin:40px 0px;
+    }
+    nav.navegador>.mi_menu:target{
+        transition:all .4s;
+        transform: translate(0,0);
+    }
+    nav.navegador>.mi_menu:target >p{
+        position: absolute;
+        display: inline;
+        box-sizing: border-box;
+        padding: 0px 30px;
+        left:0;
+        right: 0;
+    }
+    nav.navegador>.btn-menu{
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top:7px;
+        height: 60px;
+        width:60px;
+        border:4px solid white;
+        border-radius: 10px;
+        box-sizing: border-box;
+        z-index: 1001;
+    }
+    nav.navegador>.btn-menu>a{
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        display:flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        position: relative;
+    }
+    nav.navegador>.btn-menu>a>span{
+        display: block;
+        height: 4px;
+        width: 80%;
+        background-color: #fff;
+        border-radius: 3px;
+    }
+    .icon-one{
+        position: absolute;
+        display: inline-block;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 100%;
+        transform: rotate(45deg);
+    }
+    .icon-two{
+        display: none;
+        opacity: 0;
+    }
+    .icon-three{
+        position: absolute;
+        display: inline-block;
+        width: 100%; 
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 0;
+        transform: rotate(-45deg);
+    }
+}
+@media (max-width:400px){
+    nav.navegador>a>h1{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color:white;
+        display: inline-block;
+        font-size: 28px;
+        margin: 20px 20px;
+    }
+    nav.navegador>.mi_menu>h1{
+        font-size:35px;
+    }
+}

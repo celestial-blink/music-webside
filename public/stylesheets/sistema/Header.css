@@ -1,0 +1,55 @@
+div.hs-wrapper{
+    color:white;
+    background-color: black;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 45px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 1000px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+div.hs-wrapper>div.user{
+    height: 100%;
+    width: 250px;
+    position: relative;
+    font-family: inherit;
+}
+div.hs-wrapper>div.user>h1{
+    font-family: inherit;
+}
+div.hs-wrapper>div.user>span{
+    height: 80px;
+    width: 80px;
+    background-image: url(/images/sistema/user.png);
+    background-size: cover;
+    background-position:center;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top:0;
+    font-family: inherit;
+}
+div.hs-wrapper>div.user>p{
+    font-size: 18px;
+    display: inline-block;
+    width: 170px;
+    text-align: center;
+    margin-top: 10px;
+    font-family: inherit;
+}
+div.hs-wrapper>div.user>a{
+    margin-top: 10px;
+    display: inline-block;
+    width: 170px;
+    text-align: center;
+    color:white;
+    text-decoration: none;
+    font-family: inherit;
+}
+div.hs-wrapper>div.user>a:hover{
+    color:var(--color-text-hover);
+    font-size: 18px;
+}

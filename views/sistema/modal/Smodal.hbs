@@ -1,0 +1,16 @@
+<div class="Sm-wrapper" id="open-modal">
+    <div class="container">
+        {{#switch form}}
+            {{#case "artist"}}
+                {{> formArtist}}
+            {{/case}}
+            {{#case "album"}}
+                {{> formAlbum}}
+            {{/case}}
+            {{#case "news"}}
+                {{> formNews}}
+            {{/case}}
+        {{/switch}}
+    </div>
+    <a href="#close-modal">X</a>
+</div>

@@ -1,0 +1,70 @@
+div.CoverPage{
+    height: 400px;
+    width: 100%;
+    background-color: var(--color-background-dark);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:white;
+    position: relative;
+    min-width: 360px;
+}
+div.CoverPage>h1{
+    display: inline-block;
+    position: absolute;
+    left: 50px;
+    top: 25%;
+    min-width: 360px;
+    max-width: 470px;
+}
+div.CoverPage>p{
+    display: inline-block;
+    position: absolute;
+    left: 50px;
+    top: 40%;
+    min-width: 470px;
+    max-width: 470px;
+}
+div.CoverPage::before{
+    content: "";
+    height: 100%;
+    width: 50%;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    background-image: url(/images/portada.jpg);
+    background-size: cover;
+    background-position: 60% 50%;
+    -webkit-mask-image:linear-gradient(to right, transparent, rgba(0, 0, 0, 0.863) 70%);
+}
+@media (max-width:800px){
+    div.CoverPage::before{
+        width: 80%;
+    }
+    div.CoverPage> h1,div.CoverPage>p{
+        left: 0;
+        margin: auto;
+        right: 0;
+    }
+}
+@media (max-width:510px){
+    div.CoverPage{
+        height: 300px;
+    }
+    div.CoverPage>h1{
+        left: 0;
+        margin: auto;
+        right: 0;
+        font-size:26px;
+        text-align: center;
+        min-width: 360px;
+        top: 20%;
+    }
+    div.CoverPage>p{
+        left: 0;
+        margin: auto;
+        right: 0;
+        font-size:16px;
+        text-align: center;
+        min-width: 360px;
+        top:45%;
+    }
+}

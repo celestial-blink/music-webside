@@ -1,0 +1,20 @@
+@import "FormLogin.css";
+div.lo-container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+div.lo-container>h1{
+    margin:30px 0px;
+    color: var(--color-text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+}
+@media (max-width:510px){
+    div.lo-container>h1{
+        margin:15px 0px;
+        text-align: center;
+    }
+}

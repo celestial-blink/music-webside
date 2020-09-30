@@ -1,0 +1,38 @@
+div.system{
+    height: 300px;
+    width:700px;
+    min-height: 300px;
+    min-width:700px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    z-index: -1;
+}
+div.system>h2{
+    text-align: center;
+    color:var(--color-text);
+}
+div.system>a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background-color: var(--color-text);
+    height: 40px;
+    width: 150px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    top: 100px;
+    position: absolute;
+    margin:auto;
+    left:150px;
+}
+div.system>a:last-child{
+    left: auto;
+    right: 150px;
+}

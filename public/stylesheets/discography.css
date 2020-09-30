@@ -1,0 +1,22 @@
+div.dis-container{
+    position: relative;
+    margin-top: 40px;
+}
+div.dis-container>h1{
+    margin:10px 0px;
+    margin-left: 40px;
+    color: var(--color-text);
+}
+@media (max-width:510px){
+    div.dis-container{
+        margin-top: 80px;
+    }
+    div.dis-container>h1{
+        margin-left: 0;
+        text-align: center;
+        max-width: 360px;
+        display: block;
+        font-size: 24px;
+        min-width: 360px;
+    }
+}

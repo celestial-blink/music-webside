@@ -1,0 +1,31 @@
+<head>
+<link rel="stylesheet" href="/stylesheets/sistema/modal-form.css">    
+</head>
+<div class="frm-wrapper">
+    <span class="message-reserr">Lorem, ipsum dolor.</span>
+    <h1>Artistas</h1>
+    <form id="new-artist" act="insert">
+        <input type="text" oldtitle="" name="title" placeholder="ingrese nombre del artista" required>
+        
+        <label for="genre">seleccione genero</label>
+        <select name="genre" id="genre">
+        </select>
+
+        <textarea name="description" cols="30" rows="10" placeholder="Breve descripción"></textarea>
+
+        <label for="country">seleccione  pais</label>
+        <select name="country" id="country">
+        </select>
+
+        <label for="date">fecha de creacion</label>
+        <input type="date" name="date" id="date">
+
+        <label for="cover">imagen</label>
+        <input type="file" name="cover" id="cover" accept="image/jpeg, image/jpg, image/png">
+
+        <input type="submit" value="guardar">
+        <input type="reset" value="nuevo">
+
+    </form>
+</div>
+<script src="/javascripts/sistema/formArtist.js"></script>

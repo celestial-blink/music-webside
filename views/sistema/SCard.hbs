@@ -1,0 +1,13 @@
+<div class="sc-wrapper" info="{{json this}}">
+    <span class="img-info">
+        {{#unless this.cover}}
+        <p>not image</p>
+        {{/unless}}
+        <img src="/images/{{this.cover}}" alt="">
+    </span>
+    <h2>{{this.title}}</h2>
+    <span class="text-info" id="btn-ED">
+        <a href="#open-modal">Editar</a>
+        <a href="#delete">Elliminar</a>
+    </span>
+</div>

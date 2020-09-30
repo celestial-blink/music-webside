@@ -1,0 +1,27 @@
+div.follow-me{
+    height: 200px;
+    width: 100%;
+    background-color: var(--color-background-dark);
+    box-sizing: border-box;
+    padding: 10px 20px;
+    min-width: 360px;
+}
+div.follow-me>ul{
+    color:white;
+}
+div.follow-me>ul>li>a{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+div.follow-me>ul>li{
+    margin-left: 40px;
+    margin-top: 15px;
+}
+div.follow-me>ul>li>a>i{
+    font-size: 35px;
+}
+div.follow-me>ul>li>a:hover{
+    color: var(--color-text-hover);
+}

@@ -1,0 +1,160 @@
+div.fl-wrapper{
+    position: relative;
+}
+div.fl-wrapper>.container{
+    height: 450px;
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+}
+div.fl-wrapper>.container>form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    position: relative;
+    transition: all .4s;
+}
+div.fl-wrapper>.container>form>span.p{
+    width: 100%;
+    position: relative;
+    display: block;
+}
+div.fl-wrapper>.container>form>span.p>a{
+    display: inline-block;
+    position: absolute;
+    color:var(--color-background-transparent);
+    margin: auto;
+    right: 10px;
+    bottom: 0;
+    top: 0;
+    font-size: 23px;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+div.fl-wrapper>.container>form.registration>span.p>a{
+    padding: 3px 0;
+}
+div.fl-wrapper>.container>form>h3{
+    z-index: 1;
+    color:#34ff34;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.295);
+    text-align: center;
+    display: none;
+    transition: all .5s;
+    opacity: 0;
+}
+div.fl-wrapper>.container>form input,#new-password input{
+    width: 100%;
+}
+
+div.fl-wrapper>.container>form input,div.fl-wrapper>.container>form>div#new-password input{
+    height: 50px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    font-size: 20px;
+    color:var(--color-text);
+    outline: none;
+    text-align: center;
+    border-color: transparent;
+    font-family: inherit;
+    z-index: 1;
+}
+div.fl-wrapper>.container>form::before{
+    content: "";
+    width: 100%;
+    height: 350px;
+    position: absolute;
+    background-color: var(--color-text);
+    border-radius: 50%;
+    top:-40%;
+}
+div.fl-wrapper>.container>form.log-in input::placeholder{
+    text-align: center;
+    font-size: 20px;
+}
+div.fl-wrapper>.container>form.log-in>span.m-btn{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+div.fl-wrapper>.container>form>span.m-btn>a{
+    text-decoration: none;
+    color:var(--color-text);
+    font-size: 14px;
+
+}
+div.fl-wrapper>.container>form>input[type="submit"]{
+    background-color: var(--color-text);
+    color:white;
+}
+
+div.fl-wrapper>.container>form.registration{
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: 2;
+}
+div.fl-wrapper>.container>form.registration:target{
+    top: 0%;
+    left: 0px;
+}
+div.fl-wrapper>.container>form.registration>span.m-btn,div.fl-wrapper>.container>form.f-forget-pass>span.m-btn{
+    justify-content: left;
+    width: 100%;
+}
+/* div.fl-wrapper>.container>form.registration::-webkit-scrollbar{
+    background-color: var(--color-background-transparent);
+}
+div.fl-wrapper>.container>form.registration::-webkit-scrollbar-thumb{
+    background-color: var(--color-background-dark);
+} */
+div.fl-wrapper>.container>form.registration input{
+    height: 35px;
+    border-radius: 10px;
+    /* outline: none; */
+    border-color:transparent;
+    position: relative;
+    font-size: 16px;
+}
+div.fl-wrapper>.container>form.f-forget-pass{
+    position: absolute;
+    top: 0px;
+    left: 100%;
+    z-index: 3;
+}
+div.fl-wrapper>.container>form.f-forget-pass>h4{
+    z-index: 9;
+    color:rgb(34, 67, 255);
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.295);
+    transition: all .5s;
+    opacity: 0;
+}
+div.fl-wrapper>.container>form.f-forget-pass>input#code{
+    display: none;
+}
+div.fl-wrapper>.container>form.f-forget-pass:target{
+    top: 0px;
+    left:0px;
+}
+#new-password>input{
+    margin:5px 0px;
+    display: none;
+}

@@ -1,0 +1,13 @@
+:root{
+    --color-text:#009AD6;
+    --color-text-hover:#4fcdff;
+    --color-background-transparent:#0099d691;
+    --color-background-dark:#00639C;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #DBDBDB;
+}

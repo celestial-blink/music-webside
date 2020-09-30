@@ -1,0 +1,150 @@
+.minmodal-wrapper{
+    width: 100%;
+    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.288);
+    display: flex;
+    box-sizing: border-box;
+    padding: 20px;
+    position: fixed;
+    top: 120%;
+    left: 0px;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+    z-index: 1100;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow: hidden;
+}
+.minmodal-wrapper:target{
+    top:0px;
+    left: 0px;
+}
+.minmodal-wrapper>.container{
+    height: 80%;
+    width: 80%;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 25px 0 25px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.minmodal-wrapper>.container>a{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    background-color: #000000e1;
+    color:white;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 7px 8px;
+    border-radius: 5px 0 5px 5px;
+}
+.minmodal-wrapper>.container>span{
+    display: none;
+}
+.minmodal-wrapper>.container>span>ol{
+    height: 100%;
+    width: 100%;
+    background-color: #0000002d;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.minmodal-wrapper>.container>span>ol::-webkit-scrollbar{
+    background-color: var(--color-background-transparent);
+    border-radius: 5px;
+}
+.minmodal-wrapper>.container>span>ol::-webkit-scrollbar-thumb{
+    background-color: var(--color-background-dark);
+    border-radius: 5px;
+}
+.minmodal-wrapper>.container>span>ol>li{
+    color:var(--color-text);
+    margin-left: 40px;
+    font-size: 20px;
+    padding: 5px;
+    border-width: 0px 0px 3px 0px;
+    border-color: var(--color-text);
+    border-style: solid;
+    position: relative;
+}
+.minmodal-wrapper>.container>span>ol>li>p{
+    display: inline-block;
+    width: 80%;
+}
+.minmodal-wrapper>.container>span>ol>li>a{
+    text-decoration: none;
+    color:white;
+    display:inline-block;
+    position: absolute;
+    right: 10%;
+    background-color: red;
+    padding: 0px 5px;
+    border-radius: 5px;
+}
+.minmodal-wrapper>.container>span>ol>li:hover{
+    color:white;
+    font-size: 23px;
+}
+.minmodal-wrapper>.container>span.show-list-musics,.minmodal-wrapper>.container>span.show-list-urls{
+    display: none;
+    box-sizing: border-box;
+    height: 90%;
+    margin-top: 10px;
+    width: 100%;
+}
+.minmodal-wrapper>.container>span.controls-edit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.minmodal-wrapper>.container>span>input{
+    outline: none;
+    height: 35px;
+    width: 85%;
+    color:white;
+    font-size: 18px;
+    border-color: transparent;
+    border-radius: 10px;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    padding: 5px 15px;
+    background-color: var(--color-background-transparent);
+}
+.minmodal-wrapper>.container>span>a{
+    display: inline-block;
+    height: 35px;
+    width: 14%;
+    text-decoration: none;
+    color:white;
+    background-color: var(--color-text);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 7px 40px;
+}
+.minmodal-wrapper>.container>span.show-list-urls{
+    display: none;
+}
+div.form-min-artist{
+    background-color: rgba(0, 0, 0, 0.384);
+    width: 100%;
+    margin: 0;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    display: none;
+}
+div.form-min-artist>form{
+    width: 100%;
+    position: relative;
+}
+
