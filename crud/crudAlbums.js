@@ -66,7 +66,14 @@ const allAlbums=async(data)=>{
 
     let page=(data.page==undefined)?1:parseInt(data.page);
     let start=(page-1)*cards;
-    let allAl=await Albums.find().populate('artist').populate('genre').skip(start).limit(cards);
+    let allAl=(data.search==undefined)?
+    await Albums.find().populate('artist').populate('genre').skip(start).limit(cards)
+    :await Albums.find({
+        $or:[
+            {title:new RegExp(`^${data.search}`)},
+            {title:new RegExp(`${data.search}$`)}
+        ]
+    }).populate('artist').populate('genre').skip(start).limit(cards);
     return {pages:pagesAray,range:`${start+1} - ${total}`, total:`result ${allAl.length}`,albums:allAl}
 }
 

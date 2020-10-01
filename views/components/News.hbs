@@ -1,5 +1,16 @@
 <div class="news-wrapper">
-
+    {{#if state}}
+        {{#each result.news}}
+            <div class="news">
+                <h1>{{this.title}}</h1>
+                <span class="n-img">
+                    <img src="/images/{{this.cover}}" alt="">
+                </span>
+                <p>{{this.description}}</p>
+                <a href="{{this.link}}">ir fuente</a>
+            </div>
+        {{/each}}
+    {{/if}}
     {{#if index}}
     <div class="news">
         <h1>Lorem ipsum dolor sit amet.</h1>

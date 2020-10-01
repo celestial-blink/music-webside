@@ -1,7 +1,7 @@
-let {allAlbums}=require("./crudAlbums");
+let {searchArtist}=require('./crudArtists');
 
-allAlbums({}).then(res=>{
-    res.albums.forEach(r=>{
-        console.log(JSON.stringify(r));
-    })
+searchArtist({title:"f"}).then(res=>{
+    console.log(JSON.stringify(res));
+}).catch(err=>{
+    console.log(err);
 })

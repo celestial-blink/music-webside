@@ -18,13 +18,9 @@
 
 <div class="nav-news">
     <nav>
-        <span></span>
-        <a href="#1">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <span></span>
+        {{#each result.pages}}
+            <a href="?page={{this}}">{{this}}</a>
+        {{/each}}
     </nav>
 </div>
 

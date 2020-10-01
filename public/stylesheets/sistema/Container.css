@@ -38,9 +38,9 @@ div.con-wrapper>nav.tp>a{
     text-decoration: none;
     border-radius: 10px;
 }
-div.con-wrapper>nav.tp>form>input{
-    height: 100%;
-    width: 100%;
+div.con-wrapper>nav.tp>input{
+    height: 40px;
+    width: 250px;
     background-color: #fff;
     border-radius: 10px;
     text-align: center;
@@ -50,6 +50,7 @@ div.con-wrapper>nav.tp>form>input{
     color:var(--color-text);
     font-size: 20px;
     border-color: transparent;
+    margin: 10px 20px;
 }
 div.con-wrapper>div.container{
     width: 100%;

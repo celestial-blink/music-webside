@@ -51,7 +51,7 @@ const searchArtist=async(artist)=>{
     let seArtist=await Artists.find({
         $or:[
             {title:new RegExp(`^${artist.title}`)},
-            {title:new RegExp(`${artist}$`)}
+            {title:new RegExp(`${artist.title}$`)}
         ]
     });
     return seArtist;
@@ -70,7 +70,11 @@ const allArtist=async(data)=>{
     let page=(data.page==undefined)?1:parseInt(data.page);
     let start=(page-1)*cards;
 
-    let allArt=await Artists.find({}).populate('genre').populate('country').skip(start).limit(cards);
+    let allArt=(data.search==undefined)?await Artists.find({}).populate('genre').populate('country').skip(start).limit(cards):
+    await Artists.find({$or:[
+        {title:new RegExp(`^${data.search}`)},
+        {title:new RegExp(`${data.search}$`)}
+    ]}).populate('genre').populate('country').skip(start).limit(cards);
 
     return {pages:pagesAray,range:`${start+1} - ${total}`, total:`result ${allArt.length}`,artists:allArt}
 }
@@ -85,6 +89,11 @@ const deleteArtist=async(object)=>{
     return delArt;
 }
 
+const allArtistOrderByName=async()=>{
+    let all=await Artists.find().sort({title:1});
+    return all;
+}
+
 
 let nanana={
     title:"esconora",
@@ -95,4 +104,4 @@ let nanana={
     cover:"take.jpg",
     newtitle:"cais agujero"
 }
-module.exports = {insertArtist,updateArtist,allArtist,searchArtist,allArtistName,deleteArtist}
+module.exports = {insertArtist,updateArtist,allArtist,searchArtist,allArtistName,deleteArtist,allArtistOrderByName};

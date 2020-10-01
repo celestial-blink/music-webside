@@ -44,5 +44,16 @@ const openNewAgregate=()=>{
         }
     }
 }
-
 openNewAgregate();
+
+const Search=()=>{
+    let search=document.querySelector("nav.tp>input[type='search']");
+    let sav="";
+    search.onsearch=()=>{
+        sav=(window.location==`${window.location.origin}${window.location.pathname}`)?
+        `?view=artistas&search=${search.value}`:
+        `${window.location.toString().split("&")[0]}&search=${search.value}`;
+        window.location.href=sav;
+    };
+}
+Search();

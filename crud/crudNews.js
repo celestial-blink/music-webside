@@ -60,7 +60,14 @@ const allNews=async(data)=>{
         pagesAray.push(index);       
     }
 
-    let allNws=await News.find({}).populate('artist').skip(start).limit(cards);
+    let allNws=(data.search==undefined)?
+    await News.find({}).populate('artist').skip(start).limit(cards):
+    await News.find({
+        $or:[
+            {title:new RegExp(`^${data.search}`)},
+            {title:new RegExp(`${data.search}$`)}
+        ]
+    }).populate('artist').skip(start).limit(cards);
 
     return {pages:pagesAray,range:`${start+1} - ${total}`, total:`result ${allNws.length}`,news:allNws}
 }

@@ -35,7 +35,10 @@
 }
 .ar-wrapper>.ar-container>.container>.group-artist>ul{
     list-style-type:none;
-
+}
+.ar-wrapper>.ar-container>.container>.group-artist>ul>li>a{
+    color:white;
+    text-decoration: none;
 }
 .ar-wrapper>.ar-container>.container>.group-artist>h2{
     text-align: center;
