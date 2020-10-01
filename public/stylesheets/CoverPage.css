@@ -2,7 +2,7 @@ div.CoverPage{
     height: 400px;
     width: 100%;
     background-color: var(--color-background-dark);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color:white;
     position: relative;
     min-width: 360px;
@@ -14,6 +14,7 @@ div.CoverPage>h1{
     top: 25%;
     min-width: 360px;
     max-width: 470px;
+    font-size: 29px;
 }
 div.CoverPage>p{
     display: inline-block;
@@ -22,6 +23,7 @@ div.CoverPage>p{
     top: 40%;
     min-width: 470px;
     max-width: 470px;
+    font-size: 18px;
 }
 div.CoverPage::before{
     content: "";

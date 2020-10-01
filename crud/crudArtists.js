@@ -76,7 +76,7 @@ const allArtist=async(data)=>{
 }
 
 const allArtistName=async()=>{
-    let name=await Artists.find();
+    let name=await Artists.find().sort({_id:-1});
     return name;
 }
 

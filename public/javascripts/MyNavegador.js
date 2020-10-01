@@ -1,7 +1,14 @@
 const navegador=()=>{
-    console.log("estoy desdde navegador")
     let btnMenu = document.querySelector("#btn-menu")
-    let btnIcon = document.querySelectorAll("#btn-menu>span")
+    let btnIcon = document.querySelectorAll("#btn-menu>span");
+    let active=document.querySelectorAll("#mi_menu>div>a");
+
+    active.forEach(e=>{
+        if(e.getAttribute("href")==window.location.pathname){
+            e.style.color="var(--color-text-hover)";
+        }
+    })
+
     let state = true
     if (btnMenu!=null){
         btnMenu.onclick=()=>{

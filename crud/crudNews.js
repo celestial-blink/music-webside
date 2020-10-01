@@ -70,8 +70,13 @@ const deleteNews =async(object)=>{
     return delNews;
 }
 const listNews=async()=>{
-    let all=await News.find();
+    let all=await News.find().sort({_id:-1});
     return all;
+}
+
+const newNewsTop=async()=>{
+    let top=await News.find().sort({_id:-1}).limit(5);
+    return top;
 }
 
 let nananana={
@@ -83,4 +88,4 @@ let nananana={
     artist:"cais agujero"
 }
 
-module.exports = {insertNews,updateNews,searchNews,allNews,deleteNews,listNews};
+module.exports = {insertNews,updateNews,searchNews,allNews,deleteNews,listNews,newNewsTop};

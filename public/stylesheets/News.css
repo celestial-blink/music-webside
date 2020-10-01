@@ -39,10 +39,9 @@ div.news-wrapper>.news>.n-img>img{
     object-fit: cover;
 }
 div.news-wrapper>.news>.n-img>p{
-    color: #bebebe;
+    color: #5d5d5d;
     padding-top: 60%;
     font-size: 24px;
-    display: none;
 }
 div.news-wrapper>.news>a{
     text-decoration: none;

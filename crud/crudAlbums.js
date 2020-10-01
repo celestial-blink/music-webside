@@ -71,7 +71,7 @@ const allAlbums=async(data)=>{
 }
 
 const listAlbums=async()=>{
-    let all=await Albums.find();
+    let all=await Albums.find().sort({_id:-1});
     return all;
 }
 
@@ -80,6 +80,10 @@ const deleteAlbum=async(object)=>{
     return delAl;
 }
 
+const topAlbums=async()=>{
+    let top=await Albums.find({}).sort({_id:-1}).limit(5);
+    return top;
+}
 
 
 let nanana={
@@ -92,4 +96,4 @@ let nanana={
     newtitle:"almuna"
 }
 
-module.exports = {insertAlbum,updateAlbum,searchAlbum,allAlbums,deleteAlbum,listAlbums};
+module.exports = {insertAlbum,updateAlbum,searchAlbum,allAlbums,deleteAlbum,listAlbums,topAlbums};
