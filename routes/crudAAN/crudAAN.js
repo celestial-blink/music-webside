@@ -1,11 +1,12 @@
 let {Router} = require('express')
 let multer=require('multer');
-let {insertArtist,updateArtist,allArtistName}=require('../../crud/crudArtists');
-let {insertAlbum, updateAlbum}=require('../../crud/crudAlbums');
-let {insertNews,updateNews}=require('../../crud/crudNews');
+let {insertArtist,updateArtist,allArtistName,deleteArtist}=require('../../crud/crudArtists');
+let {insertAlbum, updateAlbum,deleteAlbum}=require('../../crud/crudAlbums');
+let {insertNews,updateNews,deleteNews}=require('../../crud/crudNews');
 let {allGenres,allCountries}=require('../../crud/getGCR');
 let {updateUser}=require('../../crud/crudUsers');
 let usenan=require('../../Globals/variables');
+let fs=require('fs');
 
 let storage=multer.diskStorage({
     destination:'uploads/images/',
@@ -41,6 +42,18 @@ router.post('/',ruta.any('cover'),(req,res)=>{
     };
     console.log(obj,"llego");
     selectActions(obj).then(ress=>{
+        if (ress.message.includes("modificó") || ress.message.includes("eliminado")){
+            if (obj.oldcover!="" || obj.oldcover!=undefined){
+                let path=`./uploads/images/${obj.oldcover}`;
+                fs.unlink(path,(err)=>{
+                    if(err){
+                        console.log(err,"no se pudo eliminar");
+                        return;
+                    }
+                    console.log("eliminado");
+                })
+            }
+        }
         console.log(ress,"estoy enviando esto");
         res.send(JSON.stringify(ress));
     }).catch(errr=>{
@@ -57,6 +70,12 @@ const selectActions=async(object)=>{
         case "update":
             let updte=await updateDocument(object);
             return updte;
+
+        case "delete":
+            let delte=await deleteDocument(object);
+            return delte;
+        default:
+            return {state:false,message:"no se encontro accion"}
     }
 }
 
@@ -100,6 +119,24 @@ const updateDocument=async(object)=>{
 
         default:
         return {state:false,message:"no se encontró formulario"}
+    }
+}
+
+const deleteDocument =async(object)=>{
+    switch (object.from){
+        case "Artistas":
+        let delArt=await deleteArtist(object);
+        return {state:true,message:"eliminado correctamente"};
+
+        case "Albumes":
+        let delAlb=await deleteAlbum(object);
+        return {state:true,message:"eliminado correctamente"};
+
+        case "Noticias":
+        let delNws=await deleteNews(object);
+        return {state:true,message:"eliminado correctamente"};
+        default:
+            return {state:false,message:"no se encontro documento para eliminar"};
     }
 }
 

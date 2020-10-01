@@ -143,7 +143,8 @@ const sendDateAl=async(form)=>{
     formdata.append('links',list[1]);
     formdata.append('faction',form.getAttribute('act'));
     formdata.append('formid',form.getAttribute('id'));
-    formdata.append('oldtitle',form.title.getAttribute('oldtitle'))
+    formdata.append('oldtitle',form.title.getAttribute('oldtitle'));
+    formdata.append('oldtitle',form.cover.getAttribute('oldcover'));
     let send=await fetch('/admin/crud',{method:'post',body:formdata});
     return await send.json();
 }

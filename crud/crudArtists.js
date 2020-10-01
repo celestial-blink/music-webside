@@ -1,4 +1,4 @@
-let Connection=require('../conection/conectionMongo');
+let {myConnection}=require('../conection/conectionMongo');
 let Artists=require('../models/Artists');
 let Genres=require('../models/Genres');
 let Countries=require('../models/Countries');
@@ -28,7 +28,7 @@ let updateArtist=async(artist)=>{
     let dateCovert=new Date(artist.date).toISOString();    
     let idGenre=await Genres.findOne({name:artist.genre});
     let idCountry=await Countries.findOne({name:artist.country});
-    let idArtist=await Artists.findOne({title:artist.oldtitle})
+    let idArtist=await Artists.findOne({title:artist.oldtitle});
 
     let updaArtist=await Artists.updateOne(
         {_id:idArtist._id},
@@ -80,6 +80,11 @@ const allArtistName=async()=>{
     return name;
 }
 
+const deleteArtist=async(object)=>{
+    let delArt=await Artists.deleteOne({_id:object.id});
+    return delArt;
+}
+
 
 let nanana={
     title:"esconora",
@@ -90,4 +95,4 @@ let nanana={
     cover:"take.jpg",
     newtitle:"cais agujero"
 }
-module.exports = {insertArtist,updateArtist,allArtist,searchArtist,allArtistName}
+module.exports = {insertArtist,updateArtist,allArtist,searchArtist,allArtistName,deleteArtist}

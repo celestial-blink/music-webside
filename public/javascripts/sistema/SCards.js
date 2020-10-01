@@ -1,12 +1,13 @@
+var dataDelete={};
 const editDelete=()=>{
-    let btns=document.querySelectorAll(".text-info>a");
+    let btnsEdit=document.querySelectorAll(".text-info>a:first-child");
+    let btnsDelete=document.querySelectorAll(".text-info>a:last-child");
     let title=document.querySelector("#content-load>h1");
     // let parent=document.querySelector(".text-info").parentElement;
     let data={};
     console.log(title.textContent);
     let b=true;
-    btns.forEach(e=>{
-        if (b) {
+    btnsEdit.forEach(e=>{
             e.onclick=(ev)=>{
                 let parent=ev.target.parentElement.parentElement;
                 if (title.textContent=="Artistas"){
@@ -27,16 +28,21 @@ const editDelete=()=>{
                 formArtist.country.value=data.country;
                 formArtist.date.value=data.creation;
                 formArtist.setAttribute('act','update');
+                formArtist.cover.setAttribute('oldcover',data.cover);
 
                 }else if (title.textContent=="Albumes"){
                     data={
-                        ...{artist:(JSON.parse(parent.getAttribute('info')).artist[0].title)},
+                        ...{artist:(
+                            (JSON.parse(parent.getAttribute('info')).artist.length!=0)?
+                            JSON.parse(parent.getAttribute('info')).artist[0].title:""
+                            )},
                         ...{musics:(JSON.parse(parent.getAttribute('info')).music)},
                         ...{genre:(JSON.parse(parent.getAttribute('info')).genre[0].name)},
                         ...{cover:(JSON.parse(parent.getAttribute('info')).cover)},
                         ...{links:(JSON.parse(parent.getAttribute('info')).links)},
                         ...{title:(JSON.parse(parent.getAttribute('info')).title)}
                     }
+                    console.log(data);
                 let formAlbums=document.querySelector("#new-album");
                 formAlbums.artist.value=data.artist;
                 formAlbums.title.setAttribute('oldtitle',data.title);
@@ -44,7 +50,7 @@ const editDelete=()=>{
                 let listMusics=document.querySelector("#view-list-music");
                 let lisM=document.querySelectorAll("#view-list-music>li");
                 lisM.forEach(e=>{
-                    listLinks.removeChild(e);
+                    listMusics.removeChild(e);
                 })
                 data.musics.forEach(e=>{
                     let li=document.createElement('li');
@@ -79,6 +85,7 @@ const editDelete=()=>{
                 });
                 containerListMusics();
                 formAlbums.setAttribute('act',"update");
+                formAlbums.cover.setAttribute('oldcover',data.cover);
 
 
                 }else if (title.textContent=="Noticias"){
@@ -97,50 +104,32 @@ const editDelete=()=>{
                     formNews.link.value=data.link;
                     formNews.artist.value=data.artist;
                     formNews.setAttribute('act','update');
+                    formNews.cover.setAttribute('oldcover',data.cover);
                 }
                 
                          console.log(data);
             }
-            b=false;
-        }else{
-            b=true;
-        }
+            
+        btnsDelete.forEach(e=>{
+            e.onclick=(ev)=>{
+                data={
+                    ...{id:(JSON.parse(ev.target.parentElement.parentElement.getAttribute('info')))._id},
+                    ...{faction:"delete"},
+                    ...{from:title.textContent},
+                    ...{oldcover:(JSON.parse(ev.target.parentElement.parentElement.getAttribute('info'))).cover}
+                }
+                dataDelete={...data};
+            };
+        });
+
     });
-
-    // btns[0].onclick=(e)=>{
-    //     e.preventDefault();
-    //     console.log(parent.getAttribute('info'));
-    //     if (title.textContent=="Artistas"){
-    //         data={
-    //             ...{genre:(JSON.parse(parent.getAttribute('info')).genre[0].name)},
-    //             ...{description:(JSON.parse(parent.getAttribute('info')).description)},
-    //             ...{country:(JSON.parse(parent.getAttribute('info')).country[0].name)},
-    //             ...{cover:(JSON.parse(parent.getAttribute('info')).cover)},
-    //             ...{title:(JSON.parse(parent.getAttribute('info')).title)},
-    //             ...{creation:(JSON.parse(parent.getAttribute('info')).creation.split('T')[0])}
-    //         }
-    //     }else if (title.textContent=="Albunes"){
-    //         data={
-    //             ...{artist:(JSON.parse(parent.getAttribute('info')).artist[0].title)},
-    //             ...{musics:(JSON.parse(parent.getAttribute('info')).music)},
-    //             ...{genre:(JSON.parse(parent.getAttribute('info')).genre[0].name)},
-    //             ...{cover:(JSON.parse(parent.getAttribute('info')).cover)},
-    //             ...{links:(JSON.parse(parent.getAttribute('info')).links)},
-    //             ...{title:(JSON.parse(parent.getAttribute('info')).title)}
-    //         }
-    //     }else if (title.textContent=="Noticias"){
-    //         data={
-    //             ...{cover:(JSON.parse(parent.getAttribute('info')).cover)},
-    //             ...{link:(JSON.parse(parent.getAttribute('info')).link)},
-    //             ...{artist:(JSON.parse(parent.getAttribute('info')).artist[0]==undefined)?"":(JSON.parse(parent.getAttribute('info')).artist[0].title)},
-    //             ...{description:(JSON.parse(parent.getAttribute('info')).description)}
-    //         }
-    //     }
-
-    //     console.log(data);
-    // }
-    // btns[1].onclick=(e)=>{
-    //     e.preventDefault();
-    // }
+}
+const sendDataDelete=async(data)=>{
+    let formdata=new FormData();
+    formdata.append('id',data.id);
+    formdata.append('faction', data.faction);
+    formdata.append('from', data.from);
+    let sendData=await fetch('/admin/crud',{method:'post',body:formdata});
+    return await sendData.json();
 }
 editDelete();

@@ -23,7 +23,8 @@ const sendDataNws=async(form)=>{
     let formdata=new FormData(form);
     formdata.append('faction',form.getAttribute('act'));
     formdata.append('formid',form.getAttribute('id'));
-    formdata.append('oldtitle',form.title.getAttribute('oldtitle'))
+    formdata.append('oldtitle',form.title.getAttribute('oldtitle'));
+    formdata.append('oldcover',form.cover.getAttribute("oldcover"));
     let send=await fetch('/admin/crud',{method:'POST',body:formdata});
     return await send.json();
 }

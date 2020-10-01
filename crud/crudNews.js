@@ -20,6 +20,7 @@ const insertNews=async(news,user)=>{
 const updateNews=async(news)=>{
     let idArtist=await Artists.findOne({title:news.artist});
     let idNews=await News.findOne({title:news.oldtitle});
+
     let updaNews=await News.updateOne(
         {_id:idNews._id},
         {
@@ -64,6 +65,14 @@ const allNews=async(data)=>{
     return {pages:pagesAray,range:`${start+1} - ${total}`, total:`result ${allNws.length}`,news:allNws}
 }
 
+const deleteNews =async(object)=>{
+    let delNews=await News.deleteOne({_id:object.id});
+    return delNews;
+}
+const listNews=async()=>{
+    let all=await News.find();
+    return all;
+}
 
 let nananana={
     title:"mi agueros",
@@ -74,4 +83,4 @@ let nananana={
     artist:"cais agujero"
 }
 
-module.exports = {insertNews,updateNews,searchNews,allNews};
+module.exports = {insertNews,updateNews,searchNews,allNews,deleteNews,listNews};

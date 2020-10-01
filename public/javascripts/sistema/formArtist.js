@@ -35,6 +35,7 @@ const sendData=async(form)=>{
     formdata.append('faction',form.getAttribute('act'));
     formdata.append('formid',form.getAttribute('id'));
     formdata.append('oldtitle',form.title.getAttribute('oldtitle'));
+    formdata.append('oldcover',form.cover.getAttribute('oldcover'));
     
     let send=await fetch('/admin/crud',{
         body:formdata,

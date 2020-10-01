@@ -1,10 +1,7 @@
-let take={
-    nombre:"holis",
-    apelddios:"algo",
-    close:"hello"
-};
-if (take.close){
-    console.log("cerrar session");
-}else{
-    console.log("esta activo");
-}
+let {allAlbums}=require("./crudAlbums");
+
+allAlbums({}).then(res=>{
+    res.albums.forEach(r=>{
+        console.log(JSON.stringify(r));
+    })
+})

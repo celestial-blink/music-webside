@@ -41,6 +41,8 @@ router.post("/", (req,res)=>{
             }).catch(err=>{
                 res.send(JSON.stringify(`${err.message} aquiiii error`));
             })
+        }else if("maintenance"){
+            
         }
         else{
             res.send(JSON.stringify(response.push("no se recibió informacion correcta")))

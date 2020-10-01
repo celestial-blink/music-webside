@@ -27,6 +27,7 @@ const updateAlbum=async(album)=>{
     let idGenre=await Genres.findOne({name:album.genre});
     let idALbum=await Albums.findOne({title:album.oldtitle});
 
+
     let updaAlbum=await Albums.updateOne(
         {_id:idALbum._id},
             {
@@ -66,7 +67,17 @@ const allAlbums=async(data)=>{
     let page=(data.page==undefined)?1:parseInt(data.page);
     let start=(page-1)*cards;
     let allAl=await Albums.find().populate('artist').populate('genre').skip(start).limit(cards);
-    return {pages:pagesAray,range:`${start+1} - ${total}`, total:`${allAl.length}`,albums:allAl}
+    return {pages:pagesAray,range:`${start+1} - ${total}`, total:`result ${allAl.length}`,albums:allAl}
+}
+
+const listAlbums=async()=>{
+    let all=await Albums.find();
+    return all;
+}
+
+const deleteAlbum=async(object)=>{
+    let delAl=await Albums.deleteOne({_id:object.id});
+    return delAl;
 }
 
 
@@ -81,4 +92,4 @@ let nanana={
     newtitle:"almuna"
 }
 
-module.exports = {insertAlbum,updateAlbum,searchAlbum,allAlbums};
+module.exports = {insertAlbum,updateAlbum,searchAlbum,allAlbums,deleteAlbum,listAlbums};

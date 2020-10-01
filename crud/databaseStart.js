@@ -3,6 +3,10 @@ let Genres = require('../models/Genres');
 let Roles = require('../models/Roles');
 let Countries = require('../models/Countries');
 let Users = require('../models/Users');
+let {listAlbums}=require("./crudAlbums");
+let {allArtistName}=require("./crudArtists");
+let {listNews}=require("./crudNews");
+let fs=require('fs');
 
 
 let listGenres=[
@@ -330,6 +334,7 @@ const resetAll=async()=>{
     })
     return [];
 }
+
 
 
 
