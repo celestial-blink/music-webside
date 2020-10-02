@@ -35,7 +35,16 @@
 }
 .ge-wrapper>.ge-container>.container>.group-genres>ul{
     list-style-type:none;
-
+    display: flex;
+    flex-wrap: wrap;
+}
+.ge-wrapper>.ge-container>.container>.group-genres>ul>li>a{
+    color:white;
+    text-decoration: none;
+}
+.ge-wrapper>.ge-container>.container>.group-genres>ul>li{
+    margin:0 10px;
+    width: 200px;
 }
 @media (max-width:560px){
     .ge-wrapper>img{
