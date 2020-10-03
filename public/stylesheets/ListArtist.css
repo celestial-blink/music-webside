@@ -39,7 +39,7 @@
     flex-wrap: wrap;    
 }
 .ar-wrapper>.ar-container>.container>.group-artist>ul>li{
-    margin: 0 10px;
+    margin: 5px 10px;
     width: 200px;
 }
 .ar-wrapper>.ar-container>.container>.group-artist>ul>li>a{

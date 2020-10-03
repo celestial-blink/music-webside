@@ -23,7 +23,15 @@ hbs.registerHelper("case",(value,options)=>{
 
 hbs.registerHelper('json',(value)=>{
   return JSON.stringify(value)
-})
+});
+
+hbs.registerHelper('getname',(value)=>{
+  return value[0].name;
+});
+
+hbs.registerHelper('gettitle',(value)=>{
+  return value[0].title;
+});
 
 hbs.registerPartials(__dirname+"/views/partials")
 hbs.registerPartials(__dirname+"/views/components")
@@ -60,6 +68,7 @@ app.use('/downloads',require('./routes/downloads'))
 app.use('/noticias',require("./routes/news"))
 app.use('/admin/crud', require('./routes/crudAAN/crudAAN'));
 app.use('/sistema/config/start',require('./routes/startsystem'));
+app.use('/busqueda',require("./routes/result"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

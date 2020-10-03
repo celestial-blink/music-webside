@@ -42,8 +42,12 @@
     color:white;
     text-decoration: none;
 }
+.ge-wrapper>.ge-container>.container>.group-genres>ul>li>a:hover{
+    font-size: 18px;
+    color:var(--color-text);
+}
 .ge-wrapper>.ge-container>.container>.group-genres>ul>li{
-    margin:0 10px;
+    margin:5px 10px;
     width: 200px;
 }
 @media (max-width:560px){

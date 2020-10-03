@@ -1,3 +1,13 @@
+div.dw-header{
+    background-color: var(--color-background-dark);
+    height: 100px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+div.dw-header>h1{
+    color:white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 div.dw-wrapper{
     position: absolute;
     display: flex;
@@ -11,10 +21,19 @@ div.dw-wrapper{
     width: 100%;
     transform: translateY(-50%);
     top:50%;
+    height: 300px;
 }
 div.dw-wrapper>h1{
     text-align: center;
     color:white;
+}
+div.dw-wrapper>img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: .5;
 }
 div.dw-wrapper>ul{
     color:white;
@@ -31,4 +50,12 @@ div.dw-wrapper>ul>li>a{
 div.dw-wrapper>ul>li>a:hover{
     color:var(--color-text-hover);
     font-size: 17px;
+}
+@media (max-width:550px){
+    div.dw-header>h1{
+        text-align: center;
+    }
+    div.dw-wrapper>h1{
+        font-size: 27px;
+    }
 }

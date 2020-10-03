@@ -45,12 +45,18 @@ const updateAlbum=async(album)=>{
 }
 
 const searchAlbum=async(album)=>{
-    let seacAlbum=await Albums.findOne({
+    let genre=(album.genre==undefined || album.genre=="")?undefined:await Genres.findOne({name:album.genre});
+    let title={
         $or:[
-            {title:new RegExp(`^${album.title}`)},
-            {title:new RegExp(`${album.title}$`)}
-        ]
-    })
+        {title:new RegExp(`^${album.title}`)},
+        {title:new RegExp(`${album.title}$`)}
+    ]};
+    let genres={
+        genre:(genre==undefined)?"":genre._id
+    }
+    let seacAlbum=await Albums.find(
+        (genre!=undefined)?genres:title
+    ).populate('artist').populate('genre');
     return seacAlbum;
 }
 
@@ -92,6 +98,22 @@ const topAlbums=async()=>{
     return top;
 }
 
+const SearchForArtist=async(object)=>{
+    let artist=await Artists.findOne(
+        {title:(object.title==undefined || object.title=="")?"":object.title}
+    );
+    let discography=await Albums.find(
+        {artist:artist._id}
+    );
+    return discography;
+}
+
+const searchOne=async(object)=>{
+    let one=await Albums.findOne({
+        title:(object.album!=undefined || object.album!="")?object.album:""
+    });
+    return one;
+}
 
 let nanana={
     artist:"esconora",
@@ -103,4 +125,4 @@ let nanana={
     newtitle:"almuna"
 }
 
-module.exports = {insertAlbum,updateAlbum,searchAlbum,allAlbums,deleteAlbum,listAlbums,topAlbums};
+module.exports = {insertAlbum,updateAlbum,searchAlbum,allAlbums,deleteAlbum,listAlbums,topAlbums,SearchForArtist,searchOne};

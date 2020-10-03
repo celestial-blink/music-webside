@@ -38,7 +38,7 @@
 }
 .l_formulario>input[type="search"]:focus{
     width: 250px;
-    color:#aeb6b9;
+    color:var(--color-text);
 }
 .l_formulario>input[type="search"]:focus::-webkit-search-cancel-button{
     opacity: 1;

@@ -3,13 +3,18 @@
     <link rel="stylesheet" href="/stylesheets/compartir.css">
 </head>
 {{> MyShare}}
+<div class="dw-header">
+    <h1>Celestial Blink</h1>
+</div>
 <div class="dw-wrapper">
-    <h1>Lorem ipsum dolor sit amet.</h1>
+    <img src="/images/fondo.png" alt="">
+    <h1>Links de descargas de <strong>"{{title}}"</strong></h1>
+    {{#unless links.links}}
+        <h1>Aún no se subieron links de "{{title}}"</h1>
+    {{/unless}}
     <ul>
-        <li><a href="#mega">Lorem, ipsum. (LOREM)</a></li>
-        <li><a href="#drive">Lorem, ipsum. (LOREM)</a></li>
-        <li><a href="#mediafire">Lorem, ipsum. (LOREM)</a></li>
+        {{#each links.links}}
+            <li><a href="{{this}}" target="_blank">{{this}}</a></li>
+        {{/each}}
     </ul>
 </div>
-
-<script src="/javascripts/MyShare.js"></script>

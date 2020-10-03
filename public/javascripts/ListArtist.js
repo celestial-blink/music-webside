@@ -24,7 +24,7 @@ const createGroupArtists=(object)=>{
         let a=document.createElement('a');
         let li=document.createElement('li');
         a.textContent=object.artist[obj].title;
-        a.href="#link";
+        a.href=`discografia?title=${object.artist[obj].title}`;
         li.appendChild(a);
         lia.push(li);
     }

@@ -37,7 +37,7 @@ const updateNews=async(news)=>{
 }
 
 const searchNews=async(news)=>{
-    let searNews=await News.findOne({
+    let searNews=await News.find({
         $or:[{
             title:new RegExp(`^${news.title}`),
             title:new RegExp(`${news.title}$`)

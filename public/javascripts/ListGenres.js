@@ -18,7 +18,7 @@ const createListGenres=(object)=>{
     for(let key in object.genres){
         let a=document.createElement('a');
         a.textContent=object.genres[key].name;
-        a.href="#hli";
+        a.href=`/busqueda?genre=${object.genres[key].name}`;
         let li=document.createElement('li');
         li.appendChild(a);
         lia.push(li);

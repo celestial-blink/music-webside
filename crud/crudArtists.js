@@ -48,12 +48,23 @@ let updateArtist=async(artist)=>{
 }
 
 const searchArtist=async(artist)=>{
-    let seArtist=await Artists.find({
+    let genre=(artist.genre==undefined || artist=="")?undefined:await Genres.findOne({name:artist.genre});
+
+    let forTitle={
         $or:[
             {title:new RegExp(`^${artist.title}`)},
             {title:new RegExp(`${artist.title}$`)}
         ]
-    });
+    };
+
+    let forGenre={
+        genre:(genre==undefined)?"":genre._id
+    }
+
+
+    let seArtist=await Artists.find(
+        (genre!=undefined)?forGenre:forTitle
+    ).populate('genre').populate('country');
     return seArtist;
 }
 

@@ -5,6 +5,7 @@ const getDataTop=()=>{
     let pN=document.querySelectorAll(".news>.n-img>p");
     let description=document.querySelectorAll(".news>p");
     let go=document.querySelectorAll(".news>a");
+    console.log(go);
     let titleN=document.querySelectorAll(".news>h1");
     fetch('',{method:'post'}).then(res=>{
         let response=res.json();
@@ -39,6 +40,7 @@ const getDataTop=()=>{
                             images.push(img);
                             titleN[indexn].textContent=r.top.news[key].title;
                             description[indexn].textContent=r.top.news[key].description;
+                            go[indexn].href=r.top.news[key].link;
                             indexn+=1;
                         }
                     }

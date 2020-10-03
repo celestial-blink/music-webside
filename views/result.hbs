@@ -1,0 +1,32 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/result.css">
+    <link rel="stylesheet" href="/stylesheets/c_navegador.css"/>
+</head>
+{{> c_navegador}}
+{{> MySearch}}
+{{> MyShare}}
+<img src="images/fondo.png" alt="" class="image-fondo">
+<div class="wr-result">
+    <div class="result-artist">
+        <h1>{{alen}} resultados en artistas</h1>
+        {{#unless artists}}
+            <h2>no hay resultados</h2>
+        {{/unless}}
+        {{#each artists}}
+            {{> ListResult}}
+        {{/each}}
+    </div>
+
+
+    <div class="result-albums">
+        <h1>{{allen}} resultados en albumes</h1>
+        {{#unless albums}}
+        <h2>no hay resultados</h2>
+        {{/unless}}
+        {{#each albums}}
+            {{> ListResult}}
+        {{/each}}
+    </div>
+</div>
+<script src="/javascripts/MyNavegador.js"></script>
+    <script src="/javascripts/ChangeStyleSearch.js"></script>

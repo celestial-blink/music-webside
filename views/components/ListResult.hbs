@@ -1,0 +1,23 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/ListResult.css">
+</head>
+<div class="wr-lstResult">
+        <img src="images/{{this.cover}}" alt="">
+        <div class="content">
+            <h1>{{this.title}}</h1>
+            {{#if this.description}}
+                <p><strong>Description:</strong> {{this.description}}</p>
+            {{/if}}
+            <p class="details"><strong>Genre:</strong> {{getname this.genre}}</p>
+            {{#if this.country}}
+                <p class="details"><strong>Country:</strong> {{getname this.country}}</p>
+                <a href="/discografia?title={{this.title}}">Ir</a>
+            {{/if}}
+            {{#if this.artist}}
+                <p class="details"><strong>Artista:</strong> {{gettitle this.artist}}</p>
+                <a href="/discografia?title={{gettitle this.artist}}#{{this.title}}">Ir</a>       
+            {{/if}}
+
+            
+        </div>
+</div>

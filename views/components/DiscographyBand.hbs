@@ -1,9 +1,32 @@
 <div class="dib-wrapper">
     <img src="/images/fondo.png" alt="">
     <div class="dib-container">
-        <h1>Lorem ipsum dolor sit.</h1>
+        <h1>{{title}}</h1>
         <div class="container">
 
+            {{#unless discography}}
+                <h1>No hay resultados</h1>
+            {{/unless}}
+            {{#each discography}}
+            <div class="dib-album" id="{{this.title}}">
+                <div class="music-cover">
+                    <span class="cover">
+                        <img src="images/{{this.cover}}" alt="">
+                    </span>
+                    <div class="list-music">
+                        <h2>{{this.title}}</h2>
+                        <ol>
+                            {{#each this.music}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ol>
+                        <a href="/downloads?album={{this.title}}" target="_blank">Download</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            
+            {{!-- 
             <div class="dib-album">
                 <div class="music-cover">
                     <span class="cover"></span>
@@ -88,7 +111,7 @@
                         <a href="/downloads">Download</a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
 
         </div>
