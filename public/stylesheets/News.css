@@ -48,7 +48,7 @@ div.news-wrapper>.news>a{
     color:white;
     display: block;
     height: 45px;
-    width: 130px;
+    width: 100px;
     padding: 9px 15px;
     border:3px solid white;
     border-radius: 5px;
@@ -156,6 +156,5 @@ div.nav-news>nav>a:hover{
     }
     div.news-wrapper>.news>a{
         width: 150px;
-        color:red;
     }
 }
