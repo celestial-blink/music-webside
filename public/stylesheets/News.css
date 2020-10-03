@@ -154,4 +154,7 @@ div.nav-news>nav>a:hover{
         font-size: 18px;
         padding: 5px 15px;
     }
+    div.news-wrapper>.news>a{
+        width: 150px;
+    }
 }
