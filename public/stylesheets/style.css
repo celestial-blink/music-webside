@@ -15,8 +15,9 @@ div.i-NewAlbums>h1,div.i-social>h1,div.i-news>h1{
   color: var(--color-text);
 }
 div.i-Footer{
-  margin-top: 150px;
+  margin-top: 170px;
   position: relative;
+  box-sizing: border-box;
 }
 div.i-social{
   position: relative;

@@ -2,6 +2,7 @@ footer.p_pie{
     display: flex;
     position: absolute;
     bottom: 0;
+    left:0;
     height: 100px;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.801);
@@ -11,7 +12,6 @@ footer.p_pie{
     font-size: 16px;
     font-family: Verdana;
     flex-direction: column;
-    /* -webkit-mask-image: linear-gradient(transparent,white 50%); */
     box-sizing: border-box;
     padding: 20px;
     min-width: 360px;

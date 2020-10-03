@@ -16,6 +16,7 @@ const getDataTop=()=>{
                         if (r.top.albums.hasOwnProperty(key)){
                             let img=new Image();
                             img.src=`/images/${r.top.albums[key].cover}`;
+                            title[index].parentElement.href=`busqueda?search=${r.top.albums[key].title}`;
                             images.push(img);
                             title[index].textContent=r.top.albums[key].title;
                             index+=1;
