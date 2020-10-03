@@ -1,3 +1,7 @@
 .vscode/
 node_modules/
+<<<<<<< HEAD
 uploads/
+=======
+uploads/
+>>>>>>> hero
