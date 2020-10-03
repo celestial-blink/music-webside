@@ -156,5 +156,6 @@ div.nav-news>nav>a:hover{
     }
     div.news-wrapper>.news>a{
         width: 150px;
+        color:red;
     }
 }
