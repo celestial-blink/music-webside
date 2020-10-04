@@ -189,9 +189,10 @@ nav.navegador>.mi_menu>h1{
         color:white;
         display: inline-block;
         font-size: 28px;
-        margin: 20px 20px;
+        margin: 20px;
+        display: inline-block;
     }
     nav.navegador>.mi_menu>h1{
-        font-size:35px;
+        font-size:30px;
     }
 }
